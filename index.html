@@ -39,15 +39,56 @@ header { display: grid; gap: 10px; }
 h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 8vw, 52px); line-height: 1; margin: 0; }
 h1 .u { background: linear-gradient(transparent 62%, var(--pencil) 62% 88%, transparent 88%); padding: 0 4px; }
 .lede { margin: 0; color: var(--ink-soft); }
-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-nav a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--soft); border-radius: 999px; padding: 5px 14px; }
-nav a:hover { color: var(--accent); }
-a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+/* barra fixa no topo com menu */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.bar-in { max-width: 680px; margin: 0 auto; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; }
+.menu-btn {
+  width: 44px; height: 44px; margin-right: -8px; border: 0; border-radius: 10px; background: transparent; color: var(--ink);
+  display: grid; place-items: center; cursor: pointer;
+}
+.menu-btn:hover { background: var(--soft); }
+.menu-btn svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; fill: none; }
+.menu-btn .x { display: none; }
+.menu-btn[aria-expanded="true"] .x { display: block; }
+.menu-btn[aria-expanded="true"] .lines { display: none; }
+.menu {
+  max-width: 680px; margin: 0 auto; padding-block: 4px 12px;
+  display: grid;
+}
+.menu a {
+  display: flex; align-items: center; min-height: 52px; padding-inline: 4px;
+  font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); text-decoration: none;
+  border-top: 1px solid var(--rule);
+}
+.menu a:active, .menu a:hover { color: var(--accent); }
+.links-inline { display: none; gap: 4px; }
+.links-inline a { font-size: 15px; font-weight: 600; color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+.links-inline a:hover { color: var(--accent); background: var(--soft); }
+@media (min-width: 760px) {
+  .links-inline { display: flex; }
+  .menu-btn, .menu { display: none !important; }
+}
+.to-top {
+  position: fixed; z-index: 8;
+  right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--paper); color: var(--accent); font-size: 22px; font-weight: 800; text-decoration: none;
+  display: grid; place-items: center; box-shadow: 0 4px 14px rgba(20, 30, 50, .12);
+}
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-section { display: grid; gap: 4px; scroll-margin-top: 16px; }
+section { display: grid; gap: 4px; scroll-margin-top: calc(72px + env(safe-area-inset-top, 0px)); }
 h2 { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1.15; margin: 0 0 6px; }
 .item { padding-block: 14px; border-top: 1px solid var(--rule); display: grid; gap: 2px; }
-.item a.name { font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+.item a.name { display: inline-block; padding-block: 6px; font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+.more a { display: inline-block; padding-block: 6px; }
 .item a.name:hover { text-decoration: underline; }
 .item p { margin: 0; }
 .tag { font-size: 13px; color: var(--ink-soft); }
@@ -55,7 +96,7 @@ h2 { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-h
 .more a { color: var(--accent); font-weight: 600; }
 
 details { border-top: 1px solid var(--rule); padding-block: 14px; }
-summary { cursor: pointer; font-weight: 700; color: var(--ink); list-style: none; display: flex; gap: 8px; align-items: baseline; }
+summary { cursor: pointer; font-weight: 700; color: var(--ink); list-style: none; display: flex; gap: 8px; align-items: center; min-height: 44px; }
 summary::-webkit-details-marker { display: none; }
 summary::before { content: "+"; font-family: var(--font-display); font-weight: 800; color: var(--accent); width: 14px; }
 details[open] summary::before { content: "–"; }
@@ -69,16 +110,35 @@ details[open] summary::before { content: "–"; }
 footer { font-size: 13px; color: var(--ink-soft); }
 </style>
 
-<div class="wrap">
-  <header>
-    <h1>Biblioteca <span class="u">Aprender</span></h1>
-    <p class="lede">As indicações do nosso grupo de mães sobre educação infantil, num lugar só.</p>
-    <nav aria-label="Seções">
+<div class="bar" id="top">
+  <div class="bar-in">
+    <a class="brand" href="#top">Aprender 📚</a>
+    <nav class="links-inline" aria-label="Seções">
       <a href="#alfabetizacao">Alfabetização</a>
       <a href="#atividades">Atividades</a>
       <a href="#livros">Livros e brinquedos</a>
       <a href="#fe">Fé</a>
     </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg class="lines" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+  </div>
+  <nav class="menu" id="menu" aria-label="Menu" hidden>
+    <a href="#alfabetizacao">Alfabetização</a>
+    <a href="#atividades">Atividades em casa</a>
+    <a href="#livros">Livros e brinquedos</a>
+    <a href="#fe">Fé</a>
+    <a href="#proximos">Próximos passos</a>
+  </nav>
+</div>
+
+<a class="to-top" id="to-top" href="#top" aria-label="Voltar ao topo" hidden>↑</a>
+
+<div class="wrap">
+  <header>
+    <h1>Biblioteca <span class="u">Aprender</span></h1>
+    <p class="lede">As indicações do nosso grupo de mães sobre educação infantil, num lugar só.</p>
   </header>
 
   <section id="alfabetizacao">
@@ -172,7 +232,7 @@ footer { font-size: 13px; color: var(--ink-soft); }
     </div>
   </section>
 
-  <section class="todo">
+  <section class="todo" id="proximos">
     <h2>Próximos passos</h2>
     <ul>
       <li>Ideias de desenvolvimento motor para os bebês.</li>
@@ -182,3 +242,19 @@ footer { font-size: 13px; color: var(--ink-soft); }
 
   <footer>Organizado a partir das mensagens do grupo “Aprender 📚”.</footer>
 </div>
+
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+const toTop = document.getElementById("to-top");
+function setMenu(open) {
+  menu.hidden = !open;
+  btn.setAttribute("aria-expanded", String(open));
+  btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+}
+btn.addEventListener("click", () => setMenu(menu.hidden));
+menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("click", e => { if (!menu.hidden && !e.target.closest(".bar")) setMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); } });
+addEventListener("scroll", () => { toTop.hidden = scrollY < 600; }, { passive: true });
+</script>

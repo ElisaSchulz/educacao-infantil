@@ -31,6 +31,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+.anchor-top { position: absolute; top: 0; left: 0; width: 1px; height: 1px; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 img { max-width: 100%; }
@@ -117,9 +118,10 @@ details[open] summary::before { content: "–"; }
 footer { font-size: 13px; color: var(--ink-soft); }
 </style>
 
-<div class="bar" id="top">
+<div id="inicio" class="anchor-top"></div>
+<div class="bar">
   <div class="bar-in">
-    <a class="brand" href="#top">Aprender 📚</a>
+    <a class="brand" href="#inicio">Aprender 📚</a>
     <nav class="links-inline" aria-label="Seções">
       <a href="#alfabetizacao">Alfabetização</a>
       <a href="#atividades">Atividades</a>
@@ -139,7 +141,7 @@ footer { font-size: 13px; color: var(--ink-soft); }
   </nav>
 </div>
 
-<a class="to-top" id="to-top" href="#top" aria-label="Voltar ao topo" hidden>↑</a>
+<a class="to-top" id="to-top" href="#inicio" aria-label="Voltar ao topo" hidden>↑</a>
 
 <div class="wrap">
   <header>
@@ -255,12 +257,20 @@ btn.addEventListener("click", () => setMenu(menu.hidden));
 menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
 document.addEventListener("click", e => { if (!menu.hidden && !e.target.closest(".bar")) setMenu(false); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); } });
-addEventListener("scroll", () => { toTop.hidden = scrollY < 600; }, { passive: true });
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener("click", e => {
+const inicio = document.getElementById("inicio");
+document.querySelectorAll('a[href="#inicio"]').forEach(a => a.addEventListener("click", e => {
   e.preventDefault();
   setMenu(false);
-  window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
-  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  const behavior = reduce ? "auto" : "smooth";
+  try { inicio.scrollIntoView({ behavior, block: "start" }); } catch (err) { inicio.scrollIntoView(true); }
+  try { (document.scrollingElement || document.documentElement).scrollTo({ top: 0, behavior }); } catch (err) { window.scrollTo(0, 0); }
 }));
+/* mostra a seta também quando a página está dentro de outra (app) */
+const sentinel = document.querySelector("header");
+if ("IntersectionObserver" in window) {
+  new IntersectionObserver(([en]) => { toTop.hidden = en.isIntersecting || en.boundingClientRect.top > 0; }).observe(sentinel);
+} else {
+  addEventListener("scroll", () => { toTop.hidden = scrollY < 400; }, { passive: true });
+}
 </script>

@@ -111,10 +111,20 @@ h2 { font-family: var(--font-display); font-weight: 800; font-size: 30px; margin
 .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
 .story { display: grid; gap: 10px; max-width: 62ch; }
 .story p { margin: 0; }
-.story h4, .todo h4 { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--margin); }
+.story h4, .todo h4, .diff h4 { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--margin); }
 .todo ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .todo li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start; }
 .box { width: 18px; height: 18px; border: 2px solid var(--ink-soft); border-radius: 3px; margin-top: 3px; }
+.guide { background: var(--card); border: 1px solid var(--card-edge); border-radius: 6px; padding: 18px; display: grid; gap: 10px; min-width: 0; align-content: start; }
+.guide h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0; line-height: 1.2; }
+.guide .src { font-size: 13px; color: var(--ink-soft); }
+.guide .src a { color: var(--sky); font-weight: 700; text-decoration: none; }
+.guide ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: passo; }
+.guide li { counter-increment: passo; display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+.guide li::before { content: counter(passo); font-family: var(--font-display); font-weight: 800; font-size: 16px; line-height: 26px; text-align: center; width: 26px; height: 26px; border-radius: 50%; background: var(--pencil); color: #23324a; }
+.guide .letters { display: block; font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: .12em; color: var(--sky); overflow-wrap: anywhere; }
+.diff { max-width: 70ch; display: grid; gap: 8px; }
+.diff p { margin: 0; }
 footer { margin-top: 48px; padding-left: 8px; font-size: 13px; color: var(--ink-soft); max-width: 70ch; }
 @media (prefers-reduced-motion: no-preference) {
   .card { transition: transform .15s ease; }
@@ -141,6 +151,39 @@ footer { margin-top: 48px; padding-left: 8px; font-size: 13px; color: var(--ink-
   <div class="count" id="count"></div>
   <div class="grid" id="grid"></div>
 
+  <section class="extra" id="som-das-letras">
+    <h2>Em que ordem ensinar o som das letras</h2>
+    <p class="lede">Duas sugestões que circularam no grupo. Elas têm pequenas diferenças, mas seguem a mesma lógica: primeiro os sons que dá para “esticar” (fffff, mmmmm), depois os que saem num estalo (p, t).</p>
+    <div class="cols">
+      <div class="guide">
+        <h3>Sugestão de ordem de apresentação</h3>
+        <span class="src">por <a href="https://www.instagram.com/prof_leidebarbosa/" target="_blank" rel="noopener">@prof_leidebarbosa ↗</a></span>
+        <ol>
+          <li><span>Sons que <strong>podem</strong> ser sustentados<span class="letters">A E I O U</span><span class="letters">F V S Z X J L R M N</span></span></li>
+          <li><span>Sons que <strong>não podem</strong> ser sustentados<span class="letters">P B T D C G</span></span></li>
+          <li><span>Demais letras<span class="letters">H Q K W Y</span></span></li>
+        </ol>
+      </div>
+      <div class="guide">
+        <h3>Ordem para ensinar o som das letras</h3>
+        <span class="src">por <a href="https://www.instagram.com/mamaeeducamais/" target="_blank" rel="noopener">@mamaeeducamais ↗</a></span>
+        <ol>
+          <li><span>Vogais<span class="letters">A E I O U</span></span></li>
+          <li><span>Consoantes que dá para prolongar (parte 1)<span class="letters">F V S Z X J</span></span></li>
+          <li><span>Consoantes que dá para prolongar (parte 2)<span class="letters">M N R L</span></span></li>
+          <li><span>Consoantes que <strong>não</strong> dá para prolongar<span class="letters">B P T D</span></span></li>
+          <li><span>Consoantes com exceções no som<span class="letters">Q K H C G</span></span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="diff">
+      <h4 class="story-h">Onde elas diferem</h4>
+      <p>A primeira junta todas as consoantes “esticáveis” num grupo só. A segunda separa M, N, R e L numa etapa própria.</p>
+      <p>C e G entram com P, B, T e D na primeira. Na segunda, ficam para o fim, junto com Q, K e H, porque mudam de som (casa/cebola, gato/gelo).</p>
+      <div class="tip">Dica do grupo: ensinar juntos o A aberto e o nasal (a/ã), o e/é e o o/ó.</div>
+    </div>
+  </section>
+
   <section class="extra">
     <h2>Como uma mãe do grupo usou</h2>
     <div class="cols">
@@ -163,7 +206,6 @@ footer { margin-top: 48px; padding-left: 8px; font-size: 13px; color: var(--ink-
       <li><span class="box"></span><span><strong>Desenvolvimento motor global e fino</strong> para os bebês. Ficou de ser pesquisado e enviado.</span></li>
       <li><span class="box"></span><span><strong>Guia de atividades para fazer em casa</strong>: maratonar o destaque “atividades” da @mamaeda.maite e anotar atividades e materiais. Ideia para dezembro, e quem quiser pode começar antes.</span></li>
       <li><span class="box"></span><span><strong>Pensar cada fase com intenção</strong>, já que o grupo tem crianças de 8 meses a quase 4 anos.</span></li>
-      <li><span class="box"></span><span><strong>Itens que não vieram na exportação</strong>: duas imagens sobre os sons das vogais (A aberto e nasal, e/é, o/ó) e a imagem de outro perfil com muitos materiais. Quem tiver, pode mandar o nome ou o link para incluir aqui.</span></li>
     </ul>
   </section>
 
@@ -189,8 +231,41 @@ const ITEMS = [
     title: "Prof. Jordana — materiais",
     type: "site", cats: ["alfa"], ages: ["3+"],
     desc: "Site com materiais de alfabetização da professora Jordana.",
-    tip: "Veio junto com imagens sobre os sons das vogais: A aberto e nasal, e/é, o/ó.",
+    tip: "Veio junto com as sugestões de ordem do som das letras. Veja a seção mais abaixo.",
     links: [{ label: "Abrir site", url: "https://profjordana.my.canva.site/" }],
+    sent: "26/10",
+  },
+  {
+    title: "@prof_leidebarbosa",
+    type: "perfil", cats: ["alfa"], ages: ["3+"],
+    desc: "Professora com conteúdo de alfabetização. Autora de uma das sugestões de ordem do som das letras.",
+    tip: null,
+    links: [
+      { label: "Ver perfil", url: "https://www.instagram.com/prof_leidebarbosa/" },
+      { label: "Ver a ordem das letras", url: "#som-das-letras" },
+    ],
+    sent: "26/10",
+  },
+  {
+    title: "@mamaeeducamais",
+    type: "perfil", cats: ["alfa"], ages: ["3+"],
+    desc: "Perfil Mamãe Educa Mais, com dicas de alfabetização em casa. Autora da outra sugestão de ordem do som das letras.",
+    tip: null,
+    links: [
+      { label: "Ver perfil", url: "https://www.instagram.com/mamaeeducamais/" },
+      { label: "Ver a ordem das letras", url: "#som-das-letras" },
+    ],
+    sent: "26/10",
+  },
+  {
+    title: "Família de Trigo",
+    type: "perfil", cats: ["atividades", "alfa"], ages: ["1-2", "2-3", "3+"],
+    desc: "Perfil da Sabrina, mãe de quatro meninos, sobre homeschooling e leitura em família. Tem loja de materiais educativos.",
+    tip: "Indicado no grupo como um perfil com muitos materiais.",
+    links: [
+      { label: "Ver perfil", url: "https://www.instagram.com/familiadetrigo/" },
+      { label: "Loja e links", url: "https://linktr.ee/familiadetrigo" },
+    ],
     sent: "26/10",
   },
   {
@@ -305,7 +380,7 @@ function render() {
       <h3>${esc(it.title)}</h3>
       <p>${esc(it.desc)}</p>
       ${it.tip ? `<div class="tip">${esc(it.tip)}</div>` : ""}
-      <div class="links">${it.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
+      <div class="links">${it.links.map(l => l.url.startsWith("#") ? `<a href="${esc(l.url)}">${esc(l.label)} ↓</a>` : `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
       <span class="sent">Enviado em ${it.sent}</span>
     </article>`;
   }).join("");

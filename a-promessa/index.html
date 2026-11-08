@@ -168,7 +168,8 @@ footer .wrap { display: grid; gap: 6px; }
 .modal .eyebrow { color: #b9821a; }
 .modal-x { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--cream); color: var(--ink); font-size: 26px; line-height: 1; cursor: pointer; }
 .modal-x:hover { background: var(--line); }
-.modal-fallback { font-size: 15px; color: var(--ink-soft); }
+.modal-fallback { font-size: 14px; color: var(--ink-soft); margin-top: -4px; }
+.modal-dl { width: 100%; }
 .modal-fallback a { color: #3b6fc4; font-weight: 700; }
 .modal-pages { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .modal-pages div { background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 2px; min-width: 0; }
@@ -350,8 +351,9 @@ footer .wrap { display: grid; gap: 6px; }
 <dialog class="modal" id="modal-amostra" aria-labelledby="modal-title">
   <button class="modal-x" type="button" data-close aria-label="Fechar">×</button>
   <p class="eyebrow">Amostra grátis</p>
-  <h2 id="modal-title">Sua amostra está abrindo</h2>
-  <p class="modal-fallback">Se o PDF não abriu, <a href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">toque aqui para baixar</a>.</p>
+  <h2 id="modal-title">Os 4 primeiros dias</h2>
+  <a class="btn modal-dl" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar o PDF</a>
+  <p class="modal-fallback">8 páginas, cerca de 5 MB. Depois de baixar, veja abaixo como imprimir.</p>
   <div class="modal-pages">
     <div><b>Páginas 1 a 6</b><span>Guia para os pais: como usar, os 4 dias e os moldes</span></div>
     <div><b>Páginas 7 e 8</b><span>As 4 cartas, frente e verso</span></div>
@@ -383,9 +385,10 @@ document.getElementById("list").innerHTML = TITLES.map((t, i) =>
   `<li${i < 4 ? ' class="free"' : ''}><span class="d">${i + 1}</span><span class="t">${t}</span>${i < 4 ? '<span class="tag">na amostra</span>' : ''}</li>`
 ).join("");
 const modal = document.getElementById("modal-amostra");
-document.querySelectorAll(".js-sample").forEach(a => a.addEventListener("click", () => {
-  // o link abre o PDF normalmente; a janelinha fica esperando quando a pessoa voltar
-  if (modal && typeof modal.showModal === "function" && !modal.open) setTimeout(() => modal.showModal(), 50);
+document.querySelectorAll(".js-sample").forEach(a => a.addEventListener("click", e => {
+  // primeiro mostra a janelinha com o botão de baixar e as instruções;
+  // se o navegador não tiver <dialog>, o link abre o PDF direto
+  if (modal && typeof modal.showModal === "function") { e.preventDefault(); modal.showModal(); }
 }));
 if (modal) {
   modal.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", () => modal.close()));

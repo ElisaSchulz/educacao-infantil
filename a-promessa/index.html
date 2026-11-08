@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Promessa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Devocional de Advento em cartas: 25 cartas para contar às crianças como Deus cumpriu a promessa de mandar um Salvador.">
+<meta property="og:title" content="A Promessa: devocional de Advento em cartas">
+<meta property="og:description" content="25 cartas para contar às crianças, de 1 a 25 de dezembro, como Deus cumpriu a promessa. Baixe grátis os 4 primeiros dias.">
+<meta property="og:image" content="https://elisaschulz.github.io/educacao-infantil/a-promessa/img/og.jpg">
+<meta property="og:url" content="https://elisaschulz.github.io/educacao-infantil/a-promessa/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: abre como o verso das cartas (céu noturno com estrelas) e desce para papel creme; as cartas reais são as imagens da página. Visual único, de propósito. */
+:root {
+  --night: #1c2b4a;
+  --night-2: #243659;
+  --gold: #e2a72e;
+  --gold-soft: #f5d58a;
+  --cream: #fdf8ec;
+  --paper: #fffdf7;
+  --ink: #23324a;
+  --ink-soft: #5f6c82;
+  --sage: #7f9a83;
+  --line: #ead9b3;
+  --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.08; text-wrap: balance; }
+p { margin: 0; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px;
+  background: var(--gold); color: var(--night); font-family: var(--display); font-weight: 700; font-size: 20px; text-decoration: none; border: 0; cursor: pointer; }
+.btn:hover { background: var(--gold-soft); }
+
+.draft { background: #fff3cd; color: #6b4e00; font-size: 14px; text-align: center; padding: 8px 16px; border-bottom: 1px dashed #d9b44a; }
+
+/* HERO */
+.hero { background-color: var(--night); background-image:
+  radial-gradient(circle at 12% 18%, rgba(245,213,138,.9) 0 1.5px, transparent 2px),
+  radial-gradient(circle at 78% 12%, rgba(245,213,138,.8) 0 1.5px, transparent 2px),
+  radial-gradient(circle at 42% 8%, rgba(253,248,236,.7) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 90% 60%, rgba(253,248,236,.6) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 30% 70%, rgba(245,213,138,.7) 0 1.2px, transparent 1.8px);
+  background-size: 340px 300px; color: var(--cream); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding-block: 64px 72px; }
+.hero h1 { font-size: clamp(56px, 9vw, 96px); font-weight: 800; color: var(--cream); letter-spacing: -.01em; }
+.hero h1 .star { color: var(--gold); }
+.hero .lead { font-size: 20px; max-width: 30ch; color: #e3e8f2; margin-top: 14px; }
+.hero .copy { display: grid; gap: 10px; min-width: 0; }
+.price-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 22px; }
+.price { font-family: var(--display); font-weight: 800; font-size: 40px; color: var(--cream); line-height: 1; }
+.price small { display: block; font-family: var(--body); font-weight: 600; font-size: 14px; color: #b9c3d6; margin-top: 4px; }
+.date-note { margin-top: 14px; font-size: 15px; color: #b9c3d6; }
+.date-note strong { color: var(--gold-soft); }
+.fan { position: relative; height: 470px; min-width: 0; }
+.fan img { position: absolute; width: 260px; top: 50%; left: 50%; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
+.fan .c1 { transform: translate(-112%, -46%) rotate(-11deg); }
+.fan .c2 { transform: translate(-50%, -54%) rotate(0deg); z-index: 2; }
+.fan .c3 { transform: translate(12%, -46%) rotate(11deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .fan img { transition: transform .35s ease; }
+  .fan:hover .c1 { transform: translate(-122%, -47%) rotate(-14deg); }
+  .fan:hover .c3 { transform: translate(22%, -47%) rotate(14deg); }
+}
+
+section.block { padding-block: 72px; }
+.block h2 { font-size: clamp(32px, 5vw, 46px); font-weight: 800; }
+.block .intro { max-width: 60ch; color: var(--ink-soft); font-size: 18px; margin-top: 12px; }
+
+/* COMO FUNCIONA */
+.how { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; margin-top: 36px; }
+.pair { position: relative; height: 470px; min-width: 0; }
+.pair img { position: absolute; width: 250px; filter: drop-shadow(0 14px 24px rgba(28,43,74,.22)); }
+.pair .front { left: 4%; top: 0; transform: rotate(-5deg); }
+.pair .back { right: 4%; bottom: 0; transform: rotate(4deg); }
+.parts { display: grid; gap: 18px; min-width: 0; }
+.part { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.part dt { font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #b9821a; }
+.part dd { margin: 0; }
+.minutes { margin-top: 6px; font-family: var(--display); font-weight: 600; font-size: 22px; }
+
+/* 25 HISTÓRIAS */
+.stories { background: var(--paper); border-block: 1px solid var(--line); }
+.list { margin: 32px 0 0; padding: 0; list-style: none; columns: 3 240px; column-gap: 32px; }
+.list li { break-inside: avoid; display: flex; align-items: center; gap: 12px; padding-block: 9px; border-bottom: 1px solid var(--line); }
+.list .d { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--night); color: var(--gold-soft); display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 15px; padding-top: 2px; }
+.list .free .d { background: var(--gold); color: var(--night); }
+.list .t { min-width: 0; }
+.list .tag { margin-left: auto; flex: none; font-size: 12px; font-weight: 800; color: #9a6b10; background: #fbecc4; border-radius: 999px; padding: 2px 9px; }
+
+/* AMOSTRA */
+.sample { background: var(--sage); color: var(--paper); }
+.sample .wrap { padding-block: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.sample h2 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 800; color: var(--paper); }
+.sample .eyebrow { color: #fbecc4; }
+.sample .intro { color: #f3f1e8; margin-block: 12px 22px; }
+.sample-copy { min-width: 0; }
+.sample-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; min-width: 0; }
+.sample-cards img { border-radius: 10px; filter: drop-shadow(0 8px 14px rgba(28,43,74,.25)); }
+.sample-cards img:nth-child(odd) { transform: translateY(12px) rotate(-2deg); }
+.sample-cards img:nth-child(even) { transform: rotate(2deg); }
+.btn-outline { background: var(--paper); color: var(--night); }
+.btn-outline:hover { background: #fff; }
+.sample-note { margin-top: 10px; font-size: 14px; color: #eef0e6; }
+.box .fine a { color: inherit; font-weight: 700; }
+.sample-link { margin-top: 12px; color: var(--gold-soft); font-weight: 700; text-underline-offset: 4px; }
+.arc { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--ink-soft); font-size: 15px; }
+.arc span::before { content: "✦"; color: var(--gold); margin-right: 8px; }
+
+/* O QUE VEM */
+.items { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+.item { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 26px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.item h3 { font-size: 26px; font-weight: 700; }
+.item ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.thumbs { display: flex; gap: 10px; }
+.thumbs img { width: calc((100% - 20px) / 3); border-radius: 6px; border: 1px solid var(--line); background: #fff; }
+.thumbs.cards img { border: 0; border-radius: 8px; }
+
+/* PARA QUEM */
+.for { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 32px; }
+.for div { display: grid; gap: 8px; align-content: start; }
+.for h3 { font-size: 22px; font-weight: 700; }
+.for p { color: var(--ink-soft); }
+
+/* COMPRA */
+.buy { background: var(--night); color: var(--cream); }
+.buy .wrap { padding-block: 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.buy h2 { color: var(--cream); font-size: clamp(34px, 5vw, 48px); font-weight: 800; }
+.buy .intro { color: #c7d0e0; }
+.box { background: var(--cream); color: var(--ink); border-radius: 24px; padding: 30px; display: grid; gap: 16px; min-width: 0; }
+.box .big { font-family: var(--display); font-weight: 800; font-size: 54px; line-height: 1; }
+.box .big span { font-size: 22px; vertical-align: top; margin-right: 4px; }
+.box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.box li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+.box li::before { content: "✓"; color: #3f8f6b; font-weight: 800; }
+.box .btn { width: 100%; }
+.box .fine { font-size: 13px; color: var(--ink-soft); text-align: center; }
+
+/* FAQ */
+.faq { margin-top: 28px; display: grid; gap: 0; max-width: 760px; }
+.faq details { border-bottom: 1px solid var(--line); padding-block: 6px; }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 52px; font-weight: 700; font-size: 18px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--display); font-size: 26px; color: #b9821a; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding-bottom: 14px; color: var(--ink-soft); max-width: 62ch; }
+
+footer { padding-block: 36px 48px; font-size: 13px; color: var(--ink-soft); border-top: 1px solid var(--line); }
+footer .wrap { display: grid; gap: 6px; }
+
+@media (max-width: 820px) {
+  .hero .wrap, .how, .items, .buy .wrap, .sample .wrap { grid-template-columns: 1fr; }
+  .hero .wrap { padding-block: 44px 24px; gap: 8px; }
+  .fan { height: 360px; }
+  .fan img { width: 190px; }
+  .pair { height: 380px; order: -1; }
+  .pair img { width: 200px; }
+  .for { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 420px) {
+  .fan { height: 300px; }
+  .fan img { width: 160px; }
+  .part { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Devocional de Advento em cartas</p>
+      <h1>A Promessa<span class="star">.</span></h1>
+      <p class="lead">25 cartas para contar às crianças, de 1 a 25 de dezembro, como Deus cumpriu a promessa de mandar um Salvador.</p>
+      <div class="price-row">
+        <a class="btn" href="#comprar">Quero as cartas</a>
+        <p class="price">R$ 19,90<small>PDF para imprimir em casa</small></p>
+      </div>
+      <a class="sample-link" href="#amostra">Ou baixe grátis os 4 primeiros dias</a>
+      <p class="date-note">O Advento começa no domingo, <strong>29 de novembro</strong>. As cartas vão de 1 a 25 de dezembro.</p>
+    </div>
+    <div class="fan" aria-hidden="true">
+      <img class="c1" src="img/f02.webp" alt="">
+      <img class="c2" src="img/f03.webp" alt="">
+      <img class="c3" src="img/f04.webp" alt="">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">Como funciona</p>
+      <h2>Uma carta por dia, cinco minutinhos juntos</h2>
+      <p class="intro">Na frente, uma ilustração para a criança olhar enquanto você conta a história. No verso, tudo o que você precisa para o devocional do dia.</p>
+      <div class="how">
+        <div class="pair">
+          <img class="front" src="img/f03.webp" alt="Frente da carta 3, Noé e o arco-íris: a arca no alto do monte com um arco-íris de sete cores.">
+          <img class="back" src="img/b03.webp" alt="Verso da carta 3 com o versículo de Gênesis 9.13, a história, uma pergunta, uma oração e uma atividade.">
+        </div>
+        <dl class="parts">
+          <div class="part"><dt>Versículo</dt><dd>O texto completo na NVI, para ler em voz alta.</dd></div>
+          <div class="part"><dt>História</dt><dd>Três frases curtas, no ritmo de uma criança de 3 anos, sempre ligando a história a Jesus.</dd></div>
+          <div class="part"><dt>Pergunte</dt><dd>Uma pergunta simples, que a criança consegue responder.</dd></div>
+          <div class="part"><dt>Ore</dt><dd>Uma oração de uma linha para fazer juntos.</dd></div>
+          <div class="part"><dt>Faça</dt><dd>Uma atividade do dia: pintar um arco-íris, atravessar o “mar” de almofadas, montar o presépio.</dd></div>
+          <p class="minutes">De 5 a 10 minutos por dia.</p>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sample" id="amostra">
+    <div class="wrap">
+      <div class="sample-cards" aria-hidden="true">
+        <img src="img/f01.webp" alt=""><img src="img/f02.webp" alt=""><img src="img/f03.webp" alt=""><img src="img/f04.webp" alt="">
+      </div>
+      <div class="sample-copy">
+        <p class="eyebrow">Amostra grátis</p>
+        <h2>Experimente os 4 primeiros dias</h2>
+        <p class="intro">Baixe as cartas de 1 a 4 de dezembro, com o guia desses dias e os moldes para imprimir: cartão “Eu prometo”, arco-íris para colorir e estrelas para recortar. Imprima, faça com seus filhos e veja se combina com a sua família.</p>
+        <a class="btn btn-outline" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar a amostra grátis (PDF)</a>
+        <p class="sample-note">8 páginas, cerca de 5 MB. Não precisa de cadastro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block stories">
+    <div class="wrap">
+      <p class="eyebrow">25 histórias</p>
+      <h2>Da Criação ao nascimento de Jesus</h2>
+      <p class="intro">Cada carta é um passo da mesma história. Logo no jardim, Deus promete um Salvador. Depois vêm Noé, Abraão, Moisés, Davi e os profetas, até a noite em Belém em que a promessa se cumpre.</p>
+      <ol class="list" id="list"></ol>
+      <div class="arc"><span>Antigo Testamento nas cartas 1 a 20</span><span>A história do Natal nas cartas 21 a 25</span><span>Versículos na NVI</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">O que você recebe</p>
+      <h2>Dois arquivos em PDF, prontos para imprimir</h2>
+      <div class="items">
+        <article class="item">
+          <div class="thumbs cards"><img src="img/f01.webp" alt="Carta 1, A Criação"><img src="img/b01.webp" alt="Verso da carta 1"><img src="img/f04.webp" alt="Carta 4, Abraão e as estrelas"></div>
+          <h3>As 25 cartas</h3>
+          <ul>
+            <li>Frente ilustrada e verso com o devocional do dia</li>
+            <li>Tamanho 9,6 × 13,6 cm, quatro por folha A4</li>
+            <li>Frente e verso já alinhados para imprimir</li>
+            <li>Cantos arredondados e linha de corte marcada</li>
+          </ul>
+        </article>
+        <article class="item">
+          <div class="thumbs"><img src="img/guia-03.webp" alt="Página do guia com o passo a passo de cada dia"><img src="img/guia-12.webp" alt="Máscara de ovelhinha para recortar"><img src="img/guia-17.webp" alt="Presépio de papel para recortar"></div>
+          <h3>Guia para os pais</h3>
+          <ul>
+            <li>Como usar as cartas e lista de materiais da casa</li>
+            <li>Materiais, passo a passo e dica para cada dia</li>
+            <li>11 anexos para imprimir: desenhos para colorir, máscara de ovelhinha, casinhas de Belém e presépio de papel</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block stories">
+    <div class="wrap">
+      <p class="eyebrow">Para a sua família</p>
+      <h2>Feito por uma mãe, para fazer em casa</h2>
+      <div class="for">
+        <div><h3>Para os pequenos</h3><p>Pensado para crianças a partir de 3 anos. Os irmãos mais velhos podem ler os versículos e ajudar nas atividades.</p></div>
+        <div><h3>Centrado em Cristo</h3><p>Cada história aponta para Jesus. Nas ilustrações, Deus não é desenhado: a presença dele aparece como luz.</p></div>
+        <div><h3>Sem complicação</h3><p>Você imprime, recorta e começa. As atividades usam o que já tem em casa: almofadas, caixinhas, giz de cera.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="buy" id="comprar">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Comece no dia 1º de dezembro</p>
+        <h2>A Promessa: devocional de Advento em cartas</h2>
+        <p class="intro">Imprima até o fim de novembro e deixe as cartas num potinho na mesa do café. Todo dia, uma nova.</p>
+      </div>
+      <div class="box">
+        <p class="big"><span>R$</span>19,90</p>
+        <ul>
+          <li>25 cartas em PDF, frente e verso</li>
+          <li>Guia para os pais com 11 anexos</li>
+          <li>Pagamento por Pix ou cartão</li>
+          <li>Arquivos enviados por e-mail logo após o pagamento</li>
+        </ul>
+        <a class="btn" href="#comprar">Comprar por R$ 19,90</a>
+        <p class="fine">As vendas abrem em breve. Enquanto isso, <a href="#amostra">baixe a amostra grátis</a>.</p>
+        <p class="fine">Produto digital. Nada é enviado pelo correio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>É um produto físico?</summary><p>Não. Você recebe dois arquivos em PDF para imprimir em casa ou numa gráfica rápida.</p></details>
+        <details><summary>Como recebo os arquivos?</summary><p>Logo depois do pagamento, os links para baixar chegam no seu e-mail.</p></details>
+        <details><summary>Preciso de impressora colorida?</summary><p>As ilustrações ficam mais bonitas em cores. Se não tiver impressora, leve o PDF a uma gráfica rápida e peça impressão frente e verso, em papel de 180 g ou mais.</p></details>
+        <details><summary>Para que idade é?</summary><p>Foi pensado para crianças a partir de 3 anos, com histórias curtas e atividades simples. Crianças maiores também aproveitam.</p></details>
+        <details><summary>E se eu começar atrasada?</summary><p>Tudo bem. Junte duas cartas num dia até alcançar a data, ou siga no seu ritmo até o Natal.</p></details>
+        <details><summary>Posso imprimir mais de uma vez?</summary><p>Sim, quantas vezes precisar para a sua família. Pedimos só que não compartilhe nem revenda o arquivo.</p></details>
+        <details><summary>Qual versão da Bíblia?</summary><p>Os versículos estão na Nova Versão Internacional (NVI), completos.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Texto bíblico: Nova Versão Internacional (NVI). Copyright © 1993, 2000, 2011 Biblica, Inc. Usado com permissão. Todos os direitos reservados.</p>
+    <p>© 2026 A Promessa. Uso pessoal e familiar.</p>
+  </div>
+</footer>
+
+<script>
+const TITLES = ["A Criação","A promessa no jardim","Noé e o arco-íris","Abraão e as estrelas","Deus vai prover","A escada de Jacó","José perdoa","Moisés e a sarça","O cordeiro da Páscoa","O caminho no mar","Pão do céu","Os Dez Mandamentos","Rute, da família de Jesus","Samuel ouve a Deus","Davi, o pastorzinho","O Senhor é meu pastor","Um menino nos nasceu","Daniel e os leões","Jonas e o grande peixe","Belém, a pequena cidade","O anjo visita Maria","O sonho de José","A viagem para Belém","Os pastores e os anjos","Jesus nasceu!"];
+document.getElementById("list").innerHTML = TITLES.map((t, i) =>
+  `<li${i < 4 ? ' class="free"' : ''}><span class="d">${i + 1}</span><span class="t">${t}</span>${i < 4 ? '<span class="tag">na amostra</span>' : ''}</li>`
+).join("");
+</script>
+</body>
+</html>

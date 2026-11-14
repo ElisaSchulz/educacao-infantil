@@ -60,8 +60,7 @@ p { margin: 0; }
 .bar nav { display: flex; gap: 2px; }
 .bar nav a { font-weight: 700; font-size: 15px; text-decoration: none; padding: 10px 10px; border-radius: 10px; color: var(--tinta); }
 .bar nav a:hover { background: var(--creme-2); }
-.bar nav .so-largo { display: none; }
-@media (min-width: 640px) { .bar nav .so-largo { display: inline-block; } .bar .logo img { height: 46px; } }
+@media (min-width: 640px) { .bar .logo img { height: 46px; } }
 
 /* topo azul-noite com estrelas */
 .hero {
@@ -148,16 +147,6 @@ h2 { font-size: clamp(28px, 6vw, 38px); font-weight: 800; }
 .sobre .assina { font-family: var(--display); font-weight: 700; font-size: 20px; }
 .sobre .assina span { display: block; font-family: var(--corpo); font-weight: 600; font-size: 15px; color: var(--tinta-suave); }
 
-/* Biblioteca Aprender */
-.aprender { padding-top: 0; }
-.aviso {
-  display: grid; gap: 12px; padding: 22px 20px; border-radius: 20px;
-  background: var(--creme-2); border: 2px dashed var(--linha);
-}
-.aviso h2 { font-size: 26px; }
-.aviso p { color: var(--tinta-suave); }
-.aviso a.link { font-weight: 800; color: var(--noite); text-decoration-color: var(--dourado); text-decoration-thickness: 3px; text-underline-offset: 4px; justify-self: start; padding-block: 6px; }
-@media (min-width: 760px) { .aviso { grid-template-columns: 1fr auto; align-items: center; padding: 28px 32px; } .aviso .texto { display: grid; gap: 6px; } }
 
 /* rodapé */
 footer { background: var(--noite); color: rgba(253,248,236,.8); padding-block: 40px calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 15px; }
@@ -176,8 +165,7 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
     <a class="logo" href="./" aria-label="Lâmpada Kids, início"><img src="img/logo-horizontal.png" alt="Lâmpada Kids" width="420" height="113"></a>
     <nav aria-label="Principal">
       <a href="a-promessa/">A Promessa</a>
-      <a href="aprender/">Aprender</a>
-      <a class="so-largo" href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
     </nav>
   </div>
 </header>
@@ -268,18 +256,6 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
     </div>
   </section>
 
-  <section class="aprender" id="aprender">
-    <div class="wrap">
-      <div class="aviso">
-        <div class="texto">
-          <p class="eyebrow" style="color:var(--salvia)">Para o grupo de mães</p>
-          <h2>Procurando a Biblioteca Aprender?</h2>
-          <p>As indicações do grupo sobre educação infantil agora ficam em lampadakids.com.br/aprender.</p>
-        </div>
-        <a class="link" href="aprender/">Abrir a Biblioteca Aprender →</a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -287,7 +263,6 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
     <img class="marca-rodape" src="img/logo-empilhado-escuro.png" alt="Lâmpada Kids" width="520" height="426" loading="lazy">
     <nav aria-label="Rodapé">
       <a href="a-promessa/">A Promessa</a>
-      <a href="aprender/">Biblioteca Aprender</a>
       <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <small>© 2026 Lâmpada Kids · Elisa Schulz</small>

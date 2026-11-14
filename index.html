@@ -1,298 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
 <meta charset="utf-8">
-<title>Biblioteca Aprender</title>
+<title>Lâmpada Kids · Devocionais cristãos para crianças</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Indicações do grupo Aprender sobre educação infantil.">
+<meta name="description" content="Devocionais e materiais cristãos para crianças, para mostrar que toda a Bíblia aponta para Jesus.">
+<meta name="theme-color" content="#1C2B4A">
+<meta property="og:title" content="Lâmpada Kids">
+<meta property="og:description" content="Devocionais e materiais cristãos para crianças. Toda a Bíblia aponta para Jesus.">
+<meta property="og:image" content="https://lampadakids.com.br/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://lampadakids.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
-/* Layout: uma coluna estreita e calma; quatro seções em lista; textos longos recolhidos em "ver mais" */
 :root {
-  --paper: #fbfcfe;
-  --ink: #23324a;
-  --ink-soft: #66748b;
-  --rule: #e3e9f2;
-  --accent: #3b6fc4;
-  --pencil: #f4b73d;
-  --soft: #f1f5fb;
-  --font-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
-  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #141b27; --ink: #e6ecf5; --ink-soft: #a3b0c4; --rule: #263247;
-    --accent: #8db0f0; --pencil: #f2bf55; --soft: #1b2433; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #141b27; --ink: #e6ecf5; --ink-soft: #a3b0c4; --rule: #263247;
-  --accent: #8db0f0; --pencil: #f2bf55; --soft: #1b2433; color-scheme: dark;
+  --noite: #1C2B4A;
+  --noite-2: #243659;
+  --dourado: #E2A72E;
+  --dourado-escuro: #B9821A;
+  --creme: #FDF8EC;
+  --creme-2: #F6EED8;
+  --salvia: #7F9A83;
+  --salvia-clara: #E6EDE3;
+  --tinta: #1C2B4A;
+  --tinta-suave: #55607a;
+  --linha: #eadfc4;
+  --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --corpo: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
 }
 * { box-sizing: border-box; }
-[hidden] { display: none !important; }
-.anchor-top { position: absolute; top: 0; left: 0; width: 1px; height: 1px; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; }
-img { max-width: 100%; }
-body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--creme); color: var(--tinta); font-family: var(--corpo); font-size: 17px; line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; border-radius: 6px; }
 .wrap {
-  max-width: 680px; margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 40px 72px;
-  display: grid; gap: 48px;
-}
-header { display: grid; gap: 10px; }
-h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 8vw, 52px); line-height: 1; margin: 0; }
-h1 .u { background: linear-gradient(transparent 62%, var(--pencil) 62% 88%, transparent 88%); padding: 0 4px; }
-.lede { margin: 0; color: var(--ink-soft); }
-/* barra fixa no topo com menu */
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
-.bar {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
-  background: var(--paper); border-bottom: 1px solid var(--rule);
+  max-width: 1040px; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-.bar-in { max-width: 680px; margin: 0 auto; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.brand { font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; }
-.menu-btn {
-  width: 44px; height: 44px; margin-right: -8px; border: 0; border-radius: 10px; background: transparent; color: var(--ink);
-  display: grid; place-items: center; cursor: pointer;
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; }
+p { margin: 0; }
+
+/* barra do topo */
+.bar { background: var(--creme); border-bottom: 1px solid var(--linha); padding-top: env(safe-area-inset-top, 0px); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.bar .logo img { height: 40px; width: auto; }
+.bar nav { display: flex; gap: 2px; }
+.bar nav a { font-weight: 700; font-size: 15px; text-decoration: none; padding: 10px 10px; border-radius: 10px; color: var(--tinta); }
+.bar nav a:hover { background: var(--creme-2); }
+@media (min-width: 640px) { .bar .logo img { height: 46px; } }
+
+/* topo azul-noite com estrelas */
+.hero {
+  background-color: var(--noite);
+  background-image:
+    radial-gradient(1.6px 1.6px at 22px 34px, rgba(253,248,236,.75) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 140px 90px, rgba(253,248,236,.5) 50%, transparent 51%),
+    radial-gradient(2px 2px at 200px 18px, rgba(226,167,46,.9) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 90px 190px, rgba(253,248,236,.6) 50%, transparent 51%),
+    radial-gradient(1.6px 1.6px at 210px 160px, rgba(253,248,236,.45) 50%, transparent 51%);
+  background-size: 240px 240px;
+  color: var(--creme);
+  padding-block: 48px 56px;
+  text-align: center;
+  overflow: hidden;
 }
-.menu-btn:hover { background: var(--soft); }
-.menu-btn svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; fill: none; }
-.menu-btn .x { display: none; }
-.menu-btn[aria-expanded="true"] .x { display: block; }
-.menu-btn[aria-expanded="true"] .lines { display: none; }
-.menu {
-  max-width: 680px; margin: 0 auto; padding-block: 4px 12px;
-  display: grid;
+.hero .wrap { display: grid; justify-items: center; gap: 18px; }
+.eyebrow { font-family: var(--corpo); font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--dourado); }
+.hero h1 { font-size: clamp(34px, 8.5vw, 56px); font-weight: 800; max-width: 14ch; }
+.hero h1 em { font-style: normal; color: var(--dourado); }
+.hero .lede { max-width: 34ch; font-size: 18px; color: rgba(253,248,236,.86); }
+.botoes { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 50px; padding: 12px 22px; border-radius: 999px;
+  font-family: var(--display); font-weight: 700; font-size: 18px; text-decoration: none;
+  background: var(--dourado); color: var(--noite); border: 2px solid var(--dourado);
+  transition: transform .15s ease, background-color .15s ease;
 }
-.menu a {
-  display: flex; align-items: center; min-height: 52px; padding-inline: 4px;
-  font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); text-decoration: none;
-  border-top: 1px solid var(--rule);
+.btn:hover { background: #ecb84a; transform: translateY(-1px); }
+.btn-linha { background: transparent; color: var(--creme); border-color: rgba(253,248,236,.45); }
+.btn-linha:hover { background: rgba(253,248,236,.08); }
+.btn svg { width: 20px; height: 20px; }
+
+.versiculo { margin-top: 22px; max-width: 30ch; font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.35; color: var(--creme); }
+.versiculo cite { display: block; margin-top: 6px; font-family: var(--corpo); font-style: normal; font-weight: 700; font-size: 13px; letter-spacing: .08em; color: var(--dourado); }
+
+section { padding-block: 56px; }
+.titulo-secao { display: grid; gap: 8px; margin-bottom: 24px; }
+.titulo-secao .eyebrow { color: var(--dourado-escuro); }
+h2 { font-size: clamp(28px, 6vw, 38px); font-weight: 800; }
+
+/* A Promessa */
+.produto {
+  background: #fff; border: 1px solid var(--linha); border-radius: 24px;
+  display: grid; gap: 28px; padding: 28px 20px 24px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(28,43,74,.07);
 }
-.menu a:active, .menu a:hover { color: var(--accent); }
-.links-inline { display: none; gap: 4px; }
-.links-inline a { font-size: 15px; font-weight: 600; color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
-.links-inline a:hover { color: var(--accent); background: var(--soft); }
+.leque { position: relative; height: 250px; margin-inline: auto; width: 100%; max-width: 360px; }
+.leque img {
+  position: absolute; bottom: 0; left: 50%; width: 150px; height: auto; border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(28,43,74,.22); transform-origin: 50% 100%;
+}
+.leque .c1 { transform: translateX(-108%) rotate(-10deg); }
+.leque .c2 { transform: translateX(8%) rotate(10deg); }
+.leque .c3 { transform: translateX(-50%) translateY(-6px); z-index: 2; }
+.produto-texto { display: grid; gap: 14px; }
+.produto h3 { font-size: 34px; font-weight: 800; }
+.produto .detalhes { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.produto .detalhes li { display: flex; gap: 10px; align-items: flex-start; }
+.produto .detalhes li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 9px; border-radius: 50%; background: var(--salvia); }
+.preco { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.preco strong { font-family: var(--display); font-size: 32px; font-weight: 800; }
+.preco span { color: var(--tinta-suave); font-size: 15px; }
+.produto .btn { justify-self: start; }
 @media (min-width: 760px) {
-  .links-inline { display: flex; }
-  .menu-btn, .menu { display: none !important; }
+  .produto { grid-template-columns: 1fr 1.1fr; align-items: center; padding: 40px; }
+  .leque { height: 300px; }
+  .leque img { width: 180px; }
 }
-.to-top {
-  position: fixed; z-index: 8;
-  right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--rule);
-  background: var(--paper); color: var(--accent); font-size: 22px; font-weight: 800; text-decoration: none;
-  display: grid; place-items: center; box-shadow: 0 4px 14px rgba(20, 30, 50, .12);
-}
-a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-section { display: grid; gap: 4px; scroll-margin-top: calc(72px + env(safe-area-inset-top, 0px)); }
-h2 { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: 1.15; margin: 0 0 6px; }
-.item { padding-block: 14px; border-top: 1px solid var(--rule); display: grid; gap: 2px; }
-.item a.name { display: inline-block; padding-block: 6px; font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
-.more a { display: inline-block; padding-block: 6px; }
-.name-plain { display: inline-block; padding-block: 6px; font-weight: 700; font-size: 18px; color: var(--ink); }
-.item a.name:hover { text-decoration: underline; }
-.item p { margin: 0; }
-.tag { font-size: 13px; color: var(--ink-soft); }
-.more { font-size: 15px; color: var(--ink-soft); }
-.more a { color: var(--accent); font-weight: 600; }
+/* jeito da Lâmpada Kids */
+.jeito { background: var(--salvia-clara); }
+.pontos { display: grid; gap: 14px; }
+.ponto { background: var(--creme); border-radius: 18px; padding: 20px; display: grid; gap: 6px; }
+.ponto h3 { font-size: 22px; font-weight: 700; }
+.ponto p { color: var(--tinta-suave); }
+.ponto .num { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--dourado); color: var(--noite); font-family: var(--display); font-weight: 800; }
+@media (min-width: 760px) { .pontos { grid-template-columns: repeat(3, 1fr); } }
 
-details { border-top: 1px solid var(--rule); padding-block: 14px; }
-summary { cursor: pointer; font-weight: 700; color: var(--ink); list-style: none; display: flex; gap: 8px; align-items: center; min-height: 44px; }
-summary::-webkit-details-marker { display: none; }
-summary::before { content: "+"; font-family: var(--font-display); font-weight: 800; color: var(--accent); width: 14px; }
-details[open] summary::before { content: "–"; }
-.inside { display: grid; gap: 12px; padding: 12px 0 4px 22px; }
-.inside p { margin: 0; }
-.steps { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
-.letters { font-family: var(--font-display); font-weight: 600; letter-spacing: .1em; color: var(--accent); }
-.src { font-size: 14px; color: var(--ink-soft); }
+/* sobre */
+.sobre { display: grid; gap: 18px; max-width: 680px; }
+.sobre blockquote { margin: 0; font-size: 19px; line-height: 1.6; padding-left: 18px; border-left: 4px solid var(--dourado); }
+.sobre .assina { font-family: var(--display); font-weight: 700; font-size: 20px; }
+.sobre .assina span { display: block; font-family: var(--corpo); font-weight: 600; font-size: 15px; color: var(--tinta-suave); }
 
-footer { font-size: 13px; color: var(--ink-soft); }
+
+/* rodapé */
+footer { background: var(--noite); color: rgba(253,248,236,.8); padding-block: 40px calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 15px; }
+footer .wrap { display: grid; gap: 22px; justify-items: center; text-align: center; }
+footer .marca-rodape { width: 160px; height: auto; }
+footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; }
+footer nav a { color: var(--creme); font-weight: 700; text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+footer nav a:hover { background: rgba(253,248,236,.08); }
+footer small { font-size: 13px; color: rgba(253,248,236,.6); }
 </style>
+</head>
+<body>
 
-<div id="inicio" class="anchor-top"></div>
-<div class="bar">
-  <div class="bar-in">
-    <a class="brand" href="#inicio">Aprender 📚</a>
-    <nav class="links-inline" aria-label="Seções">
-      <a href="#advento">Advento</a>
-      <a href="#alfabetizacao">Alfabetização</a>
-      <a href="#atividades">Atividades</a>
-      <a href="#livros">Livros e brinquedos</a>
-      <a href="#fe">Fé</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Lâmpada Kids, início"><img src="img/logo-horizontal.png" alt="Lâmpada Kids" width="420" height="113"></a>
+    <nav aria-label="Principal">
+      <a href="a-promessa/">A Promessa</a>
+      <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
-      <svg class="lines" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-    </button>
   </div>
-  <nav class="menu" id="menu" aria-label="Menu" hidden>
-    <a href="#advento">Advento</a>
-    <a href="#alfabetizacao">Alfabetização</a>
-    <a href="#atividades">Atividades em casa</a>
-    <a href="#livros">Livros e brinquedos</a>
-    <a href="#fe">Fé</a>
-  </nav>
-</div>
+</header>
 
-<a class="to-top" id="to-top" href="#inicio" aria-label="Voltar ao topo" hidden>↑</a>
-
-<div class="wrap">
-  <header>
-    <h1>Biblioteca <span class="u">Aprender</span></h1>
-    <p class="lede">As indicações do nosso grupo de mães sobre educação infantil, num lugar só.</p>
-  </header>
-
-  <section id="advento">
-    <h2>Advento</h2>
-    <p class="lede">De 29 de novembro a 25 de dezembro. Materiais para preparar o coração das crianças para o Natal.</p>
-    <div class="item">
-      <a class="name" href="https://uploads.crossway.org/excerpt/the-biggest-story-advent-reading-plan.pdf" target="_blank" rel="noopener">The Biggest Story: plano de leitura (PDF) ↗</a>
-      <p>Uma leitura por dia de 1 a 25 de dezembro, da Criação ao nascimento de Jesus, com enfeites para colorir e vídeos curtos. Em inglês, grátis.</p>
-      <span class="tag">Crossway · Kevin DeYoung</span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://rede.comuna.com.br/wp-content/uploads/2020/12/Atividades-do-Advento.pdf" target="_blank" rel="noopener">Atividades do Advento: Todas as histórias sussurram seu nome (PDF) ↗</a>
-      <p>Uma atividade por dia (colar, ligar, montar) acompanhando as histórias da Bíblia para Crianças da Sally Lloyd-Jones.</p>
-      <span class="tag">Rede Comuna</span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://evangelizandoumacrianca.com.br/product/calendario-advento/" target="_blank" rel="noopener">Calendário do Advento ↗</a>
-      <p>25 janelinhas com uma leitura, oração ou gesto de bondade por dia. O arquivo é baixado pelo site da autora.</p>
-      <span class="tag">Evangelizando uma Criança</span>
-    </div>
-  </section>
-
-  <section id="alfabetizacao">
-    <h2>Alfabetização</h2>
-    <div class="item">
-      <a class="name" href="https://profjordana.my.canva.site/" target="_blank" rel="noopener">Prof. Jordana ↗</a>
-      <p>Site com materiais de alfabetização.</p>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/p/DScvoQXgPTZ/" target="_blank" rel="noopener">Atividade rápida de alfabetização ↗</a>
-      <p>Simples e rápida, boa para depois da escola.</p>
-      <span class="tag">A partir de 3 anos</span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/prof_leidebarbosa/" target="_blank" rel="noopener">@prof_leidebarbosa ↗</a>
-      <p>Professora com dicas de alfabetização.</p>
-    </div>
-    <div class="item">
-      <span class="name-plain">Mamãe Educa Mais</span>
-      <p>Autora de uma das imagens sobre a ordem do som das letras.</p>
-      <span class="tag">Perfil não encontrado no Instagram</span>
-    </div>
-    <details>
-      <summary>Em que ordem ensinar o som das letras</summary>
-      <div class="inside">
-        <p>Comece pelos sons que dá para “esticar” (fffff, mmmmm). Depois, os que saem num estalo (p, t). Por último, as letras com exceções.</p>
-        <ol class="steps">
-          <li>Vogais: <span class="letters">A E I O U</span></li>
-          <li>Consoantes que dá para prolongar: <span class="letters">F V S Z X J</span>, depois <span class="letters">M N R L</span></li>
-          <li>Consoantes que não dá para prolongar: <span class="letters">B P T D</span></li>
-          <li>Consoantes com exceções: <span class="letters">Q K H C G</span></li>
-        </ol>
-        <p class="src">Ordem da Mamãe Educa Mais. A @prof_leidebarbosa sugere quase a mesma coisa, mas junta M, N, R, L com as outras “esticáveis” e ensina C e G junto com P, B, T, D.</p>
-        <p>Dica do grupo: ensinar juntos o a/ã, o e/é e o o/ó.</p>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Devocionais e materiais cristãos para crianças</p>
+      <h1>Toda a Bíblia aponta para <em>Jesus</em></h1>
+      <p class="lede">Materiais simples para pais e mães ensinarem a Palavra de Deus aos filhos, no dia a dia, em casa.</p>
+      <div class="botoes">
+        <a class="btn" href="#a-promessa">Conheça A Promessa</a>
+        <a class="btn btn-linha" href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @lampadakids
+        </a>
       </div>
-    </details>
-  </section>
+      <blockquote class="versiculo">
+        “Lâmpada para os meus pés é a tua palavra e, luz para os meus caminhos.”
+        <cite>SALMO 119.105</cite>
+      </blockquote>
+    </div>
+  </div>
 
-  <section id="atividades">
-    <h2>Atividades em casa</h2>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/mamaeda.maite/" target="_blank" rel="noopener">@mamaeda.maite ↗</a>
-      <p>Atividades simples feitas com a filha de 2 anos. Antes disso, focava em brincadeiras sensoriais e motoras.</p>
-      <span class="more">Tem um <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTY3MTYyNzQ5NDA4MzU2" target="_blank" rel="noopener">destaque só de atividades ↗</a></span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/familiadetrigo/" target="_blank" rel="noopener">Família de Trigo ↗</a>
-      <p>Homeschooling e leitura em família, com muitos materiais educativos.</p>
-      <span class="more"><a href="https://linktr.ee/familiadetrigo" target="_blank" rel="noopener">Loja e links ↗</a></span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://vilamontessori.com.br/" target="_blank" rel="noopener">Vila Montessori ↗</a>
-      <p>Site sobre a abordagem Montessori.</p>
-    </div>
-  </section>
-
-  <section id="livros">
-    <h2>Livros e brinquedos</h2>
-    <div class="item">
-      <a class="name" href="https://a.co/d/0da9ao4p" target="_blank" rel="noopener">Minhas 100 Primeiras Palavras ↗</a>
-      <p>Livro de imagens que ajudou muito na fala e no vocabulário.</p>
-      <span class="tag">Bebês e 1 a 2 anos</span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.mercadolivre.com.br/up/MLBU4924868045?pdp_filters=item_id%3AMLB7514010860" target="_blank" rel="noopener">Tabuleiro de madeira ↗</a>
-      <p>Letras, números e formas para aprender brincando.</p>
-      <span class="tag">De 1 ano em diante</span>
-    </div>
-    <details>
-      <summary>Como uma mãe do grupo usou os dois</summary>
-      <div class="inside">
-        <p><strong>Livro:</strong> apontar e nomear (“olha o sol”). Depois de uns dias, perguntar “cadê o sol?” e deixar a criança apontar. Logo vieram as primeiras palavras. Depois, o mesmo em inglês.</p>
-        <p><strong>Tabuleiro:</strong> ganhou antes de 1 ano. Aprendeu letras e formas brincando de montar, depois “M de mamãe, de morango”. Perto dos 4 anos, já forma sílabas e faz continhas, sem pressão.</p>
+  <section id="a-promessa">
+    <div class="wrap">
+      <div class="titulo-secao">
+        <p class="eyebrow">Nosso primeiro devocional</p>
+        <h2>Para o Advento deste ano</h2>
       </div>
-    </details>
+      <article class="produto">
+        <div class="leque" aria-hidden="true">
+          <img class="c1" src="img/promessa-f01.webp" alt="" width="440" height="623" loading="lazy">
+          <img class="c2" src="img/promessa-b01.webp" alt="" width="440" height="625" loading="lazy">
+          <img class="c3" src="img/promessa-f02.webp" alt="" width="440" height="625" loading="lazy">
+        </div>
+        <div class="produto-texto">
+          <h3>A Promessa</h3>
+          <p>Devocional de Advento em cartas. De 1 a 25 de dezembro, uma carta por dia conta às crianças como Deus prometeu um Salvador e cumpriu a promessa em Jesus.</p>
+          <ul class="detalhes">
+            <li>25 cartas ilustradas, com versículo, pergunta, oração e uma atividade</li>
+            <li>Guia para os pais</li>
+            <li>PDF para imprimir em casa</li>
+          </ul>
+          <div class="preco"><strong>R$ 9,90</strong><span>Amostra grátis com os 4 primeiros dias</span></div>
+          <a class="btn" href="a-promessa/">Ver A Promessa</a>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section id="fe">
-    <h2>Fé</h2>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/deboraalleoni/" target="_blank" rel="noopener">@deboraalleoni ↗</a>
-      <p>Cards para memorizar versículos e devocional para crianças.</p>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/priscilabasquess/" target="_blank" rel="noopener">@priscilabasquess ↗</a>
-      <p>Prática, engraçada e com Jesus no meio de tudo. Tem materiais e está abrindo uma escola.</p>
-      <span class="more"><a href="https://www.instagram.com/p/DduWAtigmU7/" target="_blank" rel="noopener">Post sobre a escola ↗</a></span>
-    </div>
-    <div class="item">
-      <a class="name" href="https://www.instagram.com/p/DeaXQlAEZUr/" target="_blank" rel="noopener">Ensinar a Palavra às crianças ↗</a>
-      <p>Post sobre a importância de ensinar a Palavra de Deus desde pequenos.</p>
+  <section class="jeito">
+    <div class="wrap">
+      <div class="titulo-secao">
+        <p class="eyebrow">O nosso jeito</p>
+        <h2>Pouco tempo, muita Palavra</h2>
+      </div>
+      <div class="pontos">
+        <div class="ponto">
+          <span class="num">1</span>
+          <h3>Jesus no centro</h3>
+          <p>Do Gênesis ao Apocalipse, cada história mostra quem é Jesus e o que Ele fez.</p>
+        </div>
+        <div class="ponto">
+          <span class="num">2</span>
+          <h3>Simples de usar</h3>
+          <p>Poucos minutos por dia, com tudo pronto para os pais lerem, perguntarem e orarem junto.</p>
+        </div>
+        <div class="ponto">
+          <span class="num">3</span>
+          <h3>Fiel à Bíblia</h3>
+          <p>Feito com cuidado, na tradição reformada, para inculcar a Palavra no coração dos filhos.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>Organizado a partir das mensagens do grupo “Aprender 📚”.</footer>
-</div>
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sobre">
+        <div class="titulo-secao" style="margin:0">
+          <p class="eyebrow">Quem faz</p>
+          <h2>Oi, eu sou a Elisa</h2>
+        </div>
+        <blockquote>Sou discípula de Jesus e mãe. Criei a Lâmpada Kids para discipular meus filhos e abençoar outras famílias com materiais simples, que ajudam a inculcar a Palavra de Deus em nossos filhos.</blockquote>
+        <p class="assina">Elisa Schulz</p>
+      </div>
+    </div>
+  </section>
 
-<script>
-const btn = document.getElementById("menu-btn");
-const menu = document.getElementById("menu");
-const toTop = document.getElementById("to-top");
-function setMenu(open) {
-  menu.hidden = !open;
-  btn.setAttribute("aria-expanded", String(open));
-  btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-}
-btn.addEventListener("click", () => setMenu(menu.hidden));
-menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
-document.addEventListener("click", e => { if (!menu.hidden && !e.target.closest(".bar")) setMenu(false); });
-document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); } });
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const inicio = document.getElementById("inicio");
-document.querySelectorAll('a[href="#inicio"]').forEach(a => a.addEventListener("click", e => {
-  e.preventDefault();
-  setMenu(false);
-  const behavior = reduce ? "auto" : "smooth";
-  try { inicio.scrollIntoView({ behavior, block: "start" }); } catch (err) { inicio.scrollIntoView(true); }
-  try { (document.scrollingElement || document.documentElement).scrollTo({ top: 0, behavior }); } catch (err) { window.scrollTo(0, 0); }
-}));
-/* mostra a seta também quando a página está dentro de outra (app) */
-const sentinel = document.querySelector("header");
-if ("IntersectionObserver" in window) {
-  new IntersectionObserver(([en]) => { toTop.hidden = en.isIntersecting || en.boundingClientRect.top > 0; }).observe(sentinel);
-} else {
-  addEventListener("scroll", () => { toTop.hidden = scrollY < 400; }, { passive: true });
-}
-</script>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="marca-rodape" src="img/logo-empilhado-escuro.png" alt="Lâmpada Kids" width="520" height="426" loading="lazy">
+    <nav aria-label="Rodapé">
+      <a href="a-promessa/">A Promessa</a>
+      <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <small>© 2026 Lâmpada Kids · Elisa Schulz</small>
+  </div>
+</footer>
+
+</body>
+</html>

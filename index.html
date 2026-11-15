@@ -157,6 +157,8 @@ footer nav a { color: var(--creme); font-weight: 700; text-decoration: none; pad
 footer nav a:hover { background: rgba(253,248,236,.08); }
 footer small { font-size: 13px; color: rgba(253,248,236,.6); }
 </style>
+<!-- Contador de visitas e cliques (Umami). Só conta no domínio lampadakids.com.br, então prévias e testes locais ficam de fora. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="COLE-AQUI-O-WEBSITE-ID" data-domains="lampadakids.com.br"></script>
 </head>
 <body>
 
@@ -164,8 +166,8 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
   <div class="wrap">
     <a class="logo" href="./" aria-label="Lâmpada Kids, início"><img src="img/logo-horizontal.png" alt="Lâmpada Kids" width="420" height="113"></a>
     <nav aria-label="Principal">
-      <a href="a-promessa/">A Promessa</a>
-      <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
+      <a href="a-promessa/" data-umami-event="ver-a-promessa" data-umami-event-local="menu">A Promessa</a>
+      <a href="https://www.instagram.com/lampadakids" data-umami-event="instagram" target="_blank" rel="noopener">Instagram</a>
     </nav>
   </div>
 </header>
@@ -177,8 +179,8 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
       <h1>Toda a Bíblia aponta para <em>Jesus</em></h1>
       <p class="lede">Materiais simples para pais e mães ensinarem a Palavra de Deus aos filhos, no dia a dia, em casa.</p>
       <div class="botoes">
-        <a class="btn" href="#a-promessa">Conheça A Promessa</a>
-        <a class="btn btn-linha" href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">
+        <a class="btn" href="#a-promessa" data-umami-event="conheca-a-promessa">Conheça A Promessa</a>
+        <a class="btn btn-linha" href="https://www.instagram.com/lampadakids" data-umami-event="instagram" data-umami-event-local="topo" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           @lampadakids
         </a>
@@ -211,7 +213,7 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
             <li>PDF para imprimir em casa</li>
           </ul>
           <div class="preco"><strong>R$ 9,90</strong><span>Amostra grátis com os 4 primeiros dias</span></div>
-          <a class="btn" href="a-promessa/">Ver A Promessa</a>
+          <a class="btn" href="a-promessa/" data-umami-event="ver-a-promessa" data-umami-event-local="cartao">Ver A Promessa</a>
         </div>
       </article>
     </div>
@@ -262,12 +264,31 @@ footer small { font-size: 13px; color: rgba(253,248,236,.6); }
   <div class="wrap">
     <img class="marca-rodape" src="img/logo-empilhado-escuro.png" alt="Lâmpada Kids" width="520" height="426" loading="lazy">
     <nav aria-label="Rodapé">
-      <a href="a-promessa/">A Promessa</a>
-      <a href="https://www.instagram.com/lampadakids" target="_blank" rel="noopener">Instagram</a>
+      <a href="a-promessa/" data-umami-event="ver-a-promessa" data-umami-event-local="menu">A Promessa</a>
+      <a href="https://www.instagram.com/lampadakids" data-umami-event="instagram" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <small>© 2026 Lâmpada Kids · Elisa Schulz</small>
   </div>
 </footer>
 
+<script>
+// Guarda a etiqueta do link (utm_*) da primeira página visitada nesta sessão,
+// para que a venda apareça na Kiwify com a origem certa (Instagram, WhatsApp...).
+(function () {
+  var KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  var q = new URLSearchParams(location.search), utm = {};
+  KEYS.forEach(function (k) { if (q.get(k)) utm[k] = q.get(k); });
+  try {
+    if (Object.keys(utm).length) sessionStorage.setItem("lk_utm", JSON.stringify(utm));
+    else utm = JSON.parse(sessionStorage.getItem("lk_utm") || "{}");
+  } catch (e) {}
+  if (!utm.utm_source) utm.utm_source = "site";
+  document.querySelectorAll('a[href^="https://pay.kiwify.com.br/"]').forEach(function (a) {
+    var u = new URL(a.href);
+    Object.keys(utm).forEach(function (k) { u.searchParams.set(k, utm[k]); });
+    a.href = u.toString();
+  });
+})();
+</script>
 </body>
 </html>

@@ -197,6 +197,8 @@ footer .wrap { display: grid; gap: 6px; }
   .part { grid-template-columns: 1fr; gap: 2px; }
 }
 </style>
+<!-- Contador de visitas e cliques (Umami). Só conta no domínio lampadakids.com.br, então prévias e testes locais ficam de fora. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="bb845a69-87a5-4447-80dc-2f394c576fee" data-domains="lampadakids.com.br"></script>
 </head>
 <body>
 
@@ -208,7 +210,7 @@ footer .wrap { display: grid; gap: 6px; }
       <h1>A Promessa<span class="star">.</span></h1>
       <p class="lead">25 cartas para contar às crianças, de 1 a 25 de dezembro, como Deus cumpriu a promessa de mandar um Salvador.</p>
       <div class="price-row">
-        <a class="btn" href="#comprar">Quero as 25 cartas</a>
+        <a class="btn" href="#comprar" data-umami-event="quero-as-25-cartas">Quero as 25 cartas</a>
         <p class="format">PDF para imprimir em casa</p>
       </div>
       <p class="date-note">O Advento começa no domingo, <strong>29 de novembro</strong>. As cartas vão de 1 a 25 de dezembro.</p>
@@ -253,7 +255,7 @@ footer .wrap { display: grid; gap: 6px; }
         <p class="eyebrow">Amostra grátis</p>
         <h2>Experimente os 4 primeiros dias</h2>
         <p class="intro">Baixe as cartas de 1 a 4 de dezembro, com o guia desses dias e os moldes para imprimir: cartão “Eu prometo”, Noé e a arca para colorir e estrelas para recortar. Imprima, faça com seus filhos e veja se combina com a sua família.</p>
-        <a class="btn btn-outline js-sample" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar a amostra grátis (PDF)</a>
+        <a class="btn btn-outline js-sample" data-umami-event="amostra-abrir" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar a amostra grátis (PDF)</a>
         <p class="sample-note">8 páginas, cerca de 5 MB. Não precisa de cadastro.</p>
       </div>
     </div>
@@ -324,7 +326,7 @@ footer .wrap { display: grid; gap: 6px; }
           <li>Pagamento por Pix ou cartão</li>
           <li>Arquivos enviados por e-mail logo após o pagamento</li>
         </ul>
-        <a class="btn" href="https://pay.kiwify.com.br/g17JLqS">Comprar por R$ 9,90</a>
+        <a class="btn" href="https://pay.kiwify.com.br/g17JLqS" data-umami-event="comprar-kiwify">Comprar por R$ 9,90</a>
         <p class="fine">Pagamento seguro pela Kiwify. Ainda em dúvida? <a href="#amostra">Baixe a amostra grátis</a>.</p>
         <p class="fine">Produto digital. Nada é enviado pelo correio.</p>
       </div>
@@ -352,7 +354,7 @@ footer .wrap { display: grid; gap: 6px; }
   <button class="modal-x" type="button" data-close aria-label="Fechar">×</button>
   <p class="eyebrow">Amostra grátis</p>
   <h2 id="modal-title">Os 4 primeiros dias</h2>
-  <a class="btn modal-dl" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar o PDF</a>
+  <a class="btn modal-dl" data-umami-event="amostra-baixar" href="https://elisaschulz.github.io/educacao-infantil/a-promessa/A-Promessa-amostra-gratis.pdf" target="_blank" rel="noopener">Baixar o PDF</a>
   <p class="modal-fallback">8 páginas, cerca de 5 MB. Depois de baixar, veja abaixo como imprimir.</p>
   <div class="modal-pages">
     <div><b>Páginas 1 a 6</b><span>Guia para os pais: como usar, os 4 dias e os moldes</span></div>
@@ -393,6 +395,25 @@ if (modal) {
   modal.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", () => modal.close()));
   modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
 }
+</script>
+<script>
+// Guarda a etiqueta do link (utm_*) da primeira página visitada nesta sessão,
+// para que a venda apareça na Kiwify com a origem certa (Instagram, WhatsApp...).
+(function () {
+  var KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  var q = new URLSearchParams(location.search), utm = {};
+  KEYS.forEach(function (k) { if (q.get(k)) utm[k] = q.get(k); });
+  try {
+    if (Object.keys(utm).length) sessionStorage.setItem("lk_utm", JSON.stringify(utm));
+    else utm = JSON.parse(sessionStorage.getItem("lk_utm") || "{}");
+  } catch (e) {}
+  if (!utm.utm_source) utm.utm_source = "site";
+  document.querySelectorAll('a[href^="https://pay.kiwify.com.br/"]').forEach(function (a) {
+    var u = new URL(a.href);
+    Object.keys(utm).forEach(function (k) { u.searchParams.set(k, utm[k]); });
+    a.href = u.toString();
+  });
+})();
 </script>
 </body>
 </html>

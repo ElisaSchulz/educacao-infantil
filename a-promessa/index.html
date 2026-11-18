@@ -127,6 +127,27 @@ section.block { padding-block: 72px; }
 .thumbs img { width: calc((100% - 20px) / 3); border-radius: 6px; border: 1px solid var(--line); background: #fff; }
 .thumbs.cards img { border: 0; border-radius: 8px; }
 
+/* BÔNUS */
+.bonus { background-color: var(--night); background-image:
+  radial-gradient(circle at 12% 18%, rgba(245,213,138,.9) 0 1.5px, transparent 2px),
+  radial-gradient(circle at 78% 12%, rgba(245,213,138,.8) 0 1.5px, transparent 2px),
+  radial-gradient(circle at 42% 8%, rgba(253,248,236,.7) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 90% 60%, rgba(253,248,236,.6) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 30% 70%, rgba(245,213,138,.7) 0 1.2px, transparent 1.8px);
+  background-size: 340px 300px; color: var(--cream); }
+.bonus h2 { color: var(--cream); }
+.bonus .intro { color: #c7d0e0; }
+.bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.bonus-card { background: var(--night-2); border: 1px solid rgba(245,213,138,.22); border-radius: 20px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.bonus-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.bonus-card .txt { padding: 20px 22px 24px; display: grid; gap: 10px; align-content: start; }
+.bonus-card .tag { justify-self: start; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--night); background: var(--gold); border-radius: 999px; padding: 3px 11px; }
+.bonus-card h3 { font-size: 24px; font-weight: 700; color: var(--cream); }
+.bonus-card p { color: #d3dae7; font-size: 16px; }
+.bonus-card .spec { font-size: 14px; color: var(--gold-soft); font-weight: 700; }
+.bonus-note { margin-top: 28px; text-align: center; color: #b9c3d6; font-size: 15px; }
+.bonus-note strong { color: var(--gold-soft); }
+
 /* PARA QUEM */
 .for { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 32px; }
 .for div { display: grid; gap: 8px; align-content: start; }
@@ -190,6 +211,7 @@ footer .wrap { display: grid; gap: 6px; }
   .pair { height: 380px; order: -1; }
   .pair img { width: 200px; }
   .for { grid-template-columns: 1fr; gap: 20px; }
+  .bonus-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
 }
 @media (max-width: 420px) {
   .fan { height: 300px; }
@@ -299,6 +321,44 @@ footer .wrap { display: grid; gap: 6px; }
     </div>
   </section>
 
+  <section class="block bonus" id="bonus">
+    <div class="wrap">
+      <p class="eyebrow">Bônus inclusos</p>
+      <h2>E mais 3 bônus para deixar o Advento especial</h2>
+      <p class="intro">Junto com as cartas e o guia, você recebe três materiais extras para imprimir. São opcionais: use o que combinar com a sua casa.</p>
+      <div class="bonus-grid">
+        <article class="bonus-card">
+          <img src="img/bonus-calendario.webp" alt="Calendário de parede A Promessa: uma trilha com 25 círculos numerados, do jardim do Éden até a manjedoura, com figurinhas redondas da arca de Noé, da estrela sobre Belém e do presépio." loading="lazy">
+          <div class="txt">
+            <span class="tag">Bônus 1</span>
+            <h3>Calendário do Advento de parede</h3>
+            <p>Um pôster em forma de trilha, com 25 figurinhas ilustradas. Depois de ler a carta do dia, a criança cola a figurinha no círculo do mesmo número e vê o caminho até o Natal.</p>
+            <p class="spec">Imprima em A3 ou em 2 folhas A4</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <img src="img/bonus-caixinha.webp" alt="Caixinha das cartas montada: caixa azul-escura com estrelas, tampa com o presépio e espaço para escrever o nome da criança." loading="lazy">
+          <div class="txt">
+            <span class="tag">Bônus 2</span>
+            <h3>Caixinha das cartas</h3>
+            <p>Um molde de caixa com tampa para guardar as 25 cartas, com espaço para escrever o nome da criança. É só recortar, dobrar e colar.</p>
+            <p class="spec">Molde em 2 folhas · 10 × 14 cm montada</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <img src="img/bonus-furo.webp" alt="Cartas de A Promessa em leque, presas por uma argola dourada passada por um furo no canto." loading="lazy">
+          <div class="txt">
+            <span class="tag">Bônus 3</span>
+            <h3>Cartas com furo</h3>
+            <p>As mesmas 25 cartas, com um furinho marcado no canto. Fure com um furador e prenda numa argola, ou pendure num varal com pregadores.</p>
+            <p class="spec">PDF pronto para imprimir frente e verso</p>
+          </div>
+        </article>
+      </div>
+      <p class="bonus-note">Tudo na mesma compra, por <strong>R$ 9,90</strong>. Os bônus ficam na área de membros, junto com as cartas e o guia.</p>
+    </div>
+  </section>
+
   <section class="block stories">
     <div class="wrap">
       <p class="eyebrow">Para a sua família</p>
@@ -323,6 +383,7 @@ footer .wrap { display: grid; gap: 6px; }
         <ul>
           <li>25 cartas em PDF, frente e verso</li>
           <li>Guia para os pais com 12 anexos</li>
+          <li>3 bônus: calendário de parede, caixinha das cartas e cartas com furo</li>
           <li>Pagamento por Pix ou cartão</li>
           <li>Acesso liberado por e-mail logo após o pagamento</li>
         </ul>
@@ -344,6 +405,7 @@ footer .wrap { display: grid; gap: 6px; }
         <details><summary>Para que idade é?</summary><p>Foi pensado para crianças a partir de 3 anos, com histórias curtas e atividades simples. Crianças maiores também aproveitam.</p></details>
         <details><summary>E se eu começar atrasada?</summary><p>Tudo bem. Junte duas cartas num dia até alcançar a data, ou siga no seu ritmo até o Natal.</p></details>
         <details><summary>Posso imprimir mais de uma vez?</summary><p>Sim, quantas vezes precisar para a sua família. Pedimos só que não compartilhe nem revenda o arquivo.</p></details>
+        <details><summary>Os bônus vêm junto?</summary><p>Sim. O calendário de parede, a caixinha das cartas e as cartas com furo estão na área de membros, no módulo Bônus, e você baixa junto com as cartas e o guia. Todos são em PDF para imprimir.</p></details>
         <details><summary>Qual versão da Bíblia?</summary><p>Os versículos estão na Nova Versão Internacional (NVI), completos.</p></details>
       </div>
     </div>

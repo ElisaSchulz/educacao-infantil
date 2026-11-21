@@ -127,6 +127,15 @@ section.block { padding-block: 72px; }
 .thumbs img { width: calc((100% - 20px) / 3); border-radius: 6px; border: 1px solid var(--line); background: #fff; }
 .thumbs.cards img { border: 0; border-radius: 8px; }
 
+/* ANEXOS */
+.anexos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; margin-top: 32px; }
+.anexo { margin: 0; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.anexo img { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 14px rgba(28,43,74,.10); }
+.anexo figcaption { display: grid; gap: 2px; font-size: 14px; line-height: 1.35; }
+.anexo figcaption span { color: var(--ink-soft); font-size: 13px; }
+@media (min-width: 1000px) { .anexos { grid-template-columns: repeat(7, 1fr); } }
+@media (max-width: 520px) { .anexos { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+
 /* BÔNUS */
 .bonus { background-color: var(--night); background-image:
   radial-gradient(circle at 12% 18%, rgba(245,213,138,.9) 0 1.5px, transparent 2px),
@@ -137,7 +146,7 @@ section.block { padding-block: 72px; }
   background-size: 340px 300px; color: var(--cream); }
 .bonus h2 { color: var(--cream); }
 .bonus .intro { color: #c7d0e0; }
-.bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+.bonus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 36px; }
 .bonus-card { background: var(--night-2); border: 1px solid rgba(245,213,138,.22); border-radius: 20px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
 .bonus-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .bonus-card .txt { padding: 20px 22px 24px; display: grid; gap: 10px; align-content: start; }
@@ -314,9 +323,33 @@ footer .wrap { display: grid; gap: 6px; }
           <ul>
             <li>Como usar as cartas e lista de materiais da casa</li>
             <li>Materiais, passo a passo e dica para cada dia</li>
-            <li>12 anexos para imprimir: desenhos para colorir, mapa da viagem para Belém, máscara de ovelhinha, casinhas de Belém e presépio de papel</li>
+            <li>13 anexos para imprimir: desenhos para colorir, mapa da viagem para Belém, máscara de ovelhinha, casinhas de Belém e presépio de papel com estrebaria e magos</li>
           </ul>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block anexos-sec" id="anexos">
+    <div class="wrap">
+      <p class="eyebrow">Dentro do guia</p>
+      <h2>13 anexos para imprimir, pintar e recortar</h2>
+      <p class="intro">Os moldes das atividades já vêm prontos no guia. Imprima numa folha A4 comum e use com o que tem em casa: lápis de cor, tesoura, cola e palitos de picolé.</p>
+      <div class="anexos">
+        <figure class="anexo"><img src="img/anexo-01.webp" alt="Anexo 1: Eu prometo" loading="lazy" width="360" height="478"><figcaption><strong>1. Eu prometo</strong><span>Dia 2</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-02.webp" alt="Anexo 2: Noé, a arca e o arco-íris" loading="lazy" width="360" height="478"><figcaption><strong>2. Noé, a arca e o arco-íris</strong><span>Dia 3 · colorir</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-03.webp" alt="Anexo 3: Estrelas de Abraão" loading="lazy" width="360" height="478"><figcaption><strong>3. Estrelas de Abraão</strong><span>Dia 4 · recortar e colar</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-04.webp" alt="Anexo 4: Coração na porta" loading="lazy" width="360" height="478"><figcaption><strong>4. Coração na porta</strong><span>Dia 9 · pintar</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-05.webp" alt="Anexo 5: Hoje eu obedeci!" loading="lazy" width="360" height="478"><figcaption><strong>5. Hoje eu obedeci!</strong><span>Dia 12 · quadro e figurinhas</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-06.webp" alt="Anexo 6: Máscara de ovelhinha" loading="lazy" width="360" height="478"><figcaption><strong>6. Máscara de ovelhinha</strong><span>Dia 16</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-07.webp" alt="Anexo 7: Os nomes de Jesus" loading="lazy" width="360" height="478"><figcaption><strong>7. Os nomes de Jesus</strong><span>Dia 17 · cartões</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-08.webp" alt="Anexo 8: Placa do cantinho de oração" loading="lazy" width="360" height="478"><figcaption><strong>8. Placa do cantinho de oração</strong><span>Dia 18 · dobrar</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-09.webp" alt="Anexo 9: Jonas para colorir" loading="lazy" width="360" height="478"><figcaption><strong>9. Jonas para colorir</strong><span>Dia 19</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-10.webp" alt="Anexo 10: Casinhas de Belém" loading="lazy" width="360" height="478"><figcaption><strong>10. Casinhas de Belém</strong><span>Dia 20 · montar a cidadezinha</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-11.webp" alt="Anexo 11: Presépio de papel" loading="lazy" width="360" height="478"><figcaption><strong>11. Presépio de papel</strong><span>Dias 23 e 25</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-12.webp" alt="Anexo 12: Estrebaria e os magos" loading="lazy" width="360" height="478"><figcaption><strong>12. Estrebaria e os magos</strong><span>Presépio, parte 2</span></figcaption></figure>
+        <figure class="anexo"><img src="img/anexo-13.webp" alt="Anexo 13: A viagem para Belém" loading="lazy" width="360" height="478"><figcaption><strong>13. A viagem para Belém</strong><span>Dia 23 · mapa</span></figcaption></figure>
+        <figure class="anexo"><img src="img/presepio-montado.webp" alt="Presépio de papel montado: a estrebaria com a estrela, Maria, José, o bebê na manjedoura, o boi, o burro e uma ovelhinha" loading="lazy" width="360" height="478"><figcaption><strong>Assim fica montado</strong><span>Anexos 11 e 12 juntos</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -324,8 +357,8 @@ footer .wrap { display: grid; gap: 6px; }
   <section class="block bonus" id="bonus">
     <div class="wrap">
       <p class="eyebrow">Bônus inclusos</p>
-      <h2>E mais 3 bônus para deixar o Advento especial</h2>
-      <p class="intro">Junto com as cartas e o guia, você recebe três materiais extras para imprimir. São opcionais: use o que combinar com a sua casa.</p>
+      <h2>E mais 4 bônus para deixar o Advento especial</h2>
+      <p class="intro">Junto com as cartas e o guia, você recebe quatro materiais extras. São opcionais: use o que combinar com a sua casa.</p>
       <div class="bonus-grid">
         <article class="bonus-card">
           <img src="img/bonus-calendario.webp" alt="Calendário de parede A Promessa: uma trilha com 25 círculos numerados, do jardim do Éden até a manjedoura, com figurinhas redondas da arca de Noé, da estrela sobre Belém e do presépio." loading="lazy">
@@ -352,6 +385,15 @@ footer .wrap { display: grid; gap: 6px; }
             <h3>Cartas com furo</h3>
             <p>As mesmas 25 cartas, com um furinho marcado no canto. Fure com um furador e prenda numa argola, ou pendure num varal com pregadores.</p>
             <p class="spec">PDF pronto para imprimir frente e verso</p>
+          </div>
+        </article>
+        <article class="bonus-card">
+          <img src="img/bonus-livreto.webp" alt="Livreto do Advento A Promessa grampeado, com a capa e uma página do dia 16, e um celular mostrando a página do dia 3, Noé e o arco-íris." loading="lazy">
+          <div class="txt">
+            <span class="tag">Bônus 4</span>
+            <h3>Livreto do Advento</h3>
+            <p>Sem tempo para recortar? O mesmo devocional em livreto: uma página por dia, com a ilustração, o versículo, a história, as perguntas, a oração e a atividade. Leia no celular ou imprima e grampeie.</p>
+            <p class="spec">PDF A4 · 27 páginas · nada para cortar</p>
           </div>
         </article>
       </div>
@@ -382,8 +424,8 @@ footer .wrap { display: grid; gap: 6px; }
         <p class="big"><span>R$</span>9,90</p>
         <ul>
           <li>25 cartas em PDF, frente e verso</li>
-          <li>Guia para os pais com 12 anexos</li>
-          <li>3 bônus: calendário de parede, caixinha das cartas e cartas com furo</li>
+          <li>Guia para os pais com 13 anexos</li>
+          <li>4 bônus: calendário de parede, caixinha das cartas, cartas com furo e livreto do Advento</li>
           <li>Pagamento por Pix ou cartão</li>
           <li>Acesso liberado por e-mail logo após o pagamento</li>
         </ul>
@@ -405,7 +447,8 @@ footer .wrap { display: grid; gap: 6px; }
         <details><summary>Para que idade é?</summary><p>Foi pensado para crianças a partir de 3 anos, com histórias curtas e atividades simples. Crianças maiores também aproveitam.</p></details>
         <details><summary>E se eu começar atrasada?</summary><p>Tudo bem. Junte duas cartas num dia até alcançar a data, ou siga no seu ritmo até o Natal.</p></details>
         <details><summary>Posso imprimir mais de uma vez?</summary><p>Sim, quantas vezes precisar para a sua família. Pedimos só que não compartilhe nem revenda o arquivo.</p></details>
-        <details><summary>Os bônus vêm junto?</summary><p>Sim. O calendário de parede, a caixinha das cartas e as cartas com furo estão na área de membros, no módulo Bônus, e você baixa junto com as cartas e o guia. Todos são em PDF para imprimir.</p></details>
+        <details><summary>Os bônus vêm junto?</summary><p>Sim. O calendário de parede, a caixinha das cartas, as cartas com furo e o livreto do Advento estão na área de membros, e você baixa junto com as cartas e o guia. Todos são em PDF.</p></details>
+        <details><summary>E se eu não tiver tempo de recortar as cartas?</summary><p>Use o livreto do Advento, que vem de bônus. Ele tem o mesmo conteúdo das cartas, uma página por dia, e não precisa cortar nada. Dá para ler direto no celular ou imprimir e grampear.</p></details>
         <details><summary>Qual versão da Bíblia?</summary><p>Os versículos estão na Nova Versão Internacional (NVI), completos.</p></details>
       </div>
     </div>

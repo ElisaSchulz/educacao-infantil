@@ -127,14 +127,11 @@ section.block { padding-block: 72px; }
 .thumbs img { width: calc((100% - 20px) / 3); border-radius: 6px; border: 1px solid var(--line); background: #fff; }
 .thumbs.cards img { border: 0; border-radius: 8px; }
 
-/* ANEXOS */
-.anexos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; margin-top: 32px; }
-.anexo { margin: 0; display: grid; gap: 8px; align-content: start; min-width: 0; }
-.anexo img { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 14px rgba(28,43,74,.10); }
-.anexo figcaption { display: grid; gap: 2px; font-size: 14px; line-height: 1.35; }
-.anexo figcaption span { color: var(--ink-soft); font-size: 13px; }
-@media (min-width: 1000px) { .anexos { grid-template-columns: repeat(7, 1fr); } }
-@media (max-width: 520px) { .anexos { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+/* PRESÉPIO MONTADO */
+.montado { margin: 40px 0 0; display: grid; gap: 14px; }
+.montado img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 24px rgba(28,43,74,.18); }
+.montado figcaption { color: var(--ink-soft); font-size: 16px; max-width: 70ch; }
+.montado figcaption strong { color: var(--ink); }
 
 /* BÔNUS */
 .bonus { background-color: var(--night); background-image:
@@ -327,30 +324,10 @@ footer .wrap { display: grid; gap: 6px; }
           </ul>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="block anexos-sec" id="anexos">
-    <div class="wrap">
-      <p class="eyebrow">Dentro do guia</p>
-      <h2>13 anexos para imprimir, pintar e recortar</h2>
-      <p class="intro">Os moldes das atividades já vêm prontos no guia. Imprima numa folha A4 comum e use com o que tem em casa: lápis de cor, tesoura, cola e palitos de picolé.</p>
-      <div class="anexos">
-        <figure class="anexo"><img src="img/anexo-01.webp" alt="Anexo 1: Eu prometo" loading="lazy" width="360" height="478"><figcaption><strong>1. Eu prometo</strong><span>Dia 2</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-02.webp" alt="Anexo 2: Noé, a arca e o arco-íris" loading="lazy" width="360" height="478"><figcaption><strong>2. Noé, a arca e o arco-íris</strong><span>Dia 3 · colorir</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-03.webp" alt="Anexo 3: Estrelas de Abraão" loading="lazy" width="360" height="478"><figcaption><strong>3. Estrelas de Abraão</strong><span>Dia 4 · recortar e colar</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-04.webp" alt="Anexo 4: Coração na porta" loading="lazy" width="360" height="478"><figcaption><strong>4. Coração na porta</strong><span>Dia 9 · pintar</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-05.webp" alt="Anexo 5: Hoje eu obedeci!" loading="lazy" width="360" height="478"><figcaption><strong>5. Hoje eu obedeci!</strong><span>Dia 12 · quadro e figurinhas</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-06.webp" alt="Anexo 6: Máscara de ovelhinha" loading="lazy" width="360" height="478"><figcaption><strong>6. Máscara de ovelhinha</strong><span>Dia 16</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-07.webp" alt="Anexo 7: Os nomes de Jesus" loading="lazy" width="360" height="478"><figcaption><strong>7. Os nomes de Jesus</strong><span>Dia 17 · cartões</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-08.webp" alt="Anexo 8: Placa do cantinho de oração" loading="lazy" width="360" height="478"><figcaption><strong>8. Placa do cantinho de oração</strong><span>Dia 18 · dobrar</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-09.webp" alt="Anexo 9: Jonas para colorir" loading="lazy" width="360" height="478"><figcaption><strong>9. Jonas para colorir</strong><span>Dia 19</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-10.webp" alt="Anexo 10: Casinhas de Belém" loading="lazy" width="360" height="478"><figcaption><strong>10. Casinhas de Belém</strong><span>Dia 20 · montar a cidadezinha</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-11.webp" alt="Anexo 11: Presépio de papel" loading="lazy" width="360" height="478"><figcaption><strong>11. Presépio de papel</strong><span>Dias 23 e 25</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-12.webp" alt="Anexo 12: Estrebaria e os magos" loading="lazy" width="360" height="478"><figcaption><strong>12. Estrebaria e os magos</strong><span>Presépio, parte 2</span></figcaption></figure>
-        <figure class="anexo"><img src="img/anexo-13.webp" alt="Anexo 13: A viagem para Belém" loading="lazy" width="360" height="478"><figcaption><strong>13. A viagem para Belém</strong><span>Dia 23 · mapa</span></figcaption></figure>
-        <figure class="anexo"><img src="img/presepio-montado.webp" alt="Presépio de papel montado: a estrebaria com a estrela, Maria, José, o bebê na manjedoura, o boi, o burro e uma ovelhinha" loading="lazy" width="360" height="478"><figcaption><strong>Assim fica montado</strong><span>Anexos 11 e 12 juntos</span></figcaption></figure>
-      </div>
+      <figure class="montado">
+        <img src="img/presepio-montado.webp" alt="Presépio de papel montado sobre uma mesa: a estrebaria com a estrela, Maria, José, o bebê na manjedoura, o boi, o burro, o anjo, os pastores, as ovelhas e os três magos." loading="lazy" width="1400" height="910">
+        <figcaption><strong>Assim fica o presépio montado.</strong> Com os Anexos 11 e 12, cada figura vai colada num palito de picolé. Monte no dia 23 e coloque o bebê na manjedoura no dia 25.</figcaption>
+      </figure>
     </div>
   </section>
 
